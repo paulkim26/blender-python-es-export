@@ -56,10 +56,11 @@ Tip: You can find your room's directory in room editor by clicking "Open UGC Fol
 ## Usage
 
 1. In Blender, create a collection called `export` and put the mesh objects you want to export in there.
-1. Run the script in Blender (click the "Run Script" button or press `Alt-P`).
-2. You should now see the models.
+    - Only visible objects will be exported.
+2. Run the script in Blender (click the "Run Script" button or press `Alt-P`).
+3. You should now see the models.
     - If in Escape Simulator your Room Editor window was already open, you will need to exit back to the main menu and open your room again to see the updated models.
-3. Re-run the script when your models are updated in Blender to export them again.
+4. Re-run the script when your models are updated in Blender to export them again.
 
 ![image](https://github.com/user-attachments/assets/d1cb3be2-af59-4aca-9553-3f7e0fd4d2fd)
 
