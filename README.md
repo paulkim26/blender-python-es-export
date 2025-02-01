@@ -11,10 +11,13 @@ This is helpful if you find it annoying to:
 - Double check that the proper Blender `.gltf` export options are correctly configured for Escape Simulator.
 - Copy and paste them to your `UGC` directory in your file browser.
 
+## Features
+
 Exports models for Escape Simulator with these settings:
 - `.gltf` format
 - Applies all mesh modifiers
 - Exports objects to their own directories
+- Corrects the exported object's origin to `(0, 0, 0)`
 
 ## Requisites
 
