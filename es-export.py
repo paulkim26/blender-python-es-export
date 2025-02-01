@@ -6,6 +6,9 @@ collection_name = "export"
 export_path = "C:/Users/<user>/AppData/LocalLow/Pine Studio/Escape Simulator/UGC/Room_x/_CustomModels" # CHANGE THIS!
 
 def export_gltf(obj, export_path):
+    if obj.hide_get(): # Skip hidden objects
+        return
+    
     # Clear out pre-existing selections
     for all_objects in bpy.context.scene.objects:
         all_objects.select_set(False)
@@ -17,11 +20,14 @@ def export_gltf(obj, export_path):
     
     if not os.path.exists(object_export_path):
         os.makedirs(object_export_path)
-    
-    # Temporarily set object origin to (0, 0, 0)
-    original_location = obj.location.copy()
-    obj.location = (0, 0, 0)
         
+    # Temporarily modify object for export
+    obj_original_state = {
+        'location': obj.location.copy(),
+    }
+    obj.location = (0, 0, 0) # Force object origin to (0, 0, 0)
+    
+    # Export
     bpy.ops.export_scene.gltf(
         filepath=os.path.join(object_export_path, f"{object_name}.gltf"),
         export_format='GLTF_SEPARATE', # Keep separate textures
@@ -29,8 +35,8 @@ def export_gltf(obj, export_path):
         export_apply=True, # Apply modifiers
     )
     
-    # Revert object origin
-    obj.location = original_location
+    # Revert object to original state
+    obj.location = obj_original_state['location']
     
     obj.select_set(False)
 
