@@ -38,6 +38,10 @@ Example:
 
 ![image](https://github.com/user-attachments/assets/7ac8058e-e8fa-4673-8c38-5c11e0b51b81)
 
+Tip: You can find your room's directory in room editor by clicking "Open UGC Folder" in the menu.
+
+![Screenshot 2025-02-01 071814](https://github.com/user-attachments/assets/8e6bdda5-e2b6-4784-8486-5d4d96e8bcfe)
+
 ## Usage
 
 1. In Blender, create a collection called `export` and put the mesh objects you want to export in there.
