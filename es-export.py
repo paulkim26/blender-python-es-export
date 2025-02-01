@@ -1,15 +1,6 @@
 import bpy
 import os
 
-'''
-Blender python script to easily mass export a collection of objects for use in Escape Simulator.
-- Export objects from a specific collection to a specific folder
-- Apply all modifiers
-- .gltf format only
-- Each export in its only folder
-- Each folder and exported gltf matches the object's name
-'''
-
 # Parameters
 collection_name = "export"
 export_path = "C:/Users/<user>/AppData/LocalLow/Pine Studio/Escape Simulator/UGC/Room_x/_CustomModels" # CHANGE THIS!
