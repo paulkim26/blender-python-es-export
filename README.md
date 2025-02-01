@@ -2,7 +2,7 @@
 
 ![blender-python-es-export-preview](https://github.com/user-attachments/assets/971295aa-aa0c-4e1f-acb2-93c7b40e47bc)
 
-**WARNING**: This script comes with no warranty. Make backups of your room/model if you are unsure.
+**WARNING**: This script comes with no warranty. Make backups of your room/model if this is your first time using this.
 
 Simple repeatable Blender Python script to mass export objects for use in Escape Simulator Room Editor.
 
