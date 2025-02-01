@@ -14,11 +14,11 @@ Blender python script to easily mass export a collection of objects for use in E
 collection_name = "export"
 export_folder = "C:/filepath"
 
-def export_gltf(obj, export_folder):
+def export_gltf(obj, export_path):
     bpy.context.view_layer.objects.active = obj
     obj.select_set(True)
     object_name = obj.name
-    object_export_path = os.path.join(export_folder, object_name)
+    object_export_path = os.path.join(export_path, object_name)
     
     if not os.path.exists(object_export_path):
         os.makedirs(object_export_path)
@@ -32,20 +32,20 @@ def export_gltf(obj, export_folder):
     
     obj.select_set(False)
 
-def export_collection_to_gltf(collection_name, export_folder):
+def export_collection_to_gltf(collection_name, export_path):
     # Get the collection by name
     collection = bpy.data.collections.get(collection_name)
     if not collection:
         print(f"Collection '{collection_name}' not found.")
         return
     
-    if not os.path.exists(export_folder):
-        os.makedirs(export_folder)
+    if not os.path.exists(export_path):
+        os.makedirs(export_path)
         
     for obj in collection.objects:
         if obj.type == 'MESH':  # Export only mesh objects
             print(f"Exporting: {obj.name}")
-            export_gltf(obj, export_folder)
+            export_gltf(obj, export_path)
 
-export_collection_to_gltf(collection_name, export_folder)
+export_collection_to_gltf(collection_name, export_path)
 print("Done")
