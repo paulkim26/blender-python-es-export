@@ -12,7 +12,7 @@ Blender python script to easily mass export a collection of objects for use in E
 
 # Parameters
 collection_name = "export"
-export_folder = "C:/filepath"
+export_path = "C:/Users/<user>/AppData/LocalLow/Pine Studio/Escape Simulator/UGC/Room_x/_CustomModels" # CHANGE THIS!
 
 def export_gltf(obj, export_path):
     bpy.context.view_layer.objects.active = obj
