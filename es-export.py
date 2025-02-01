@@ -6,6 +6,10 @@ collection_name = "export"
 export_path = "C:/Users/<user>/AppData/LocalLow/Pine Studio/Escape Simulator/UGC/Room_x/_CustomModels" # CHANGE THIS!
 
 def export_gltf(obj, export_path):
+    # Clear out existing selection
+    for all_objects in bpy.context.scene.objects:
+        all_objects.select_set(False)
+    
     bpy.context.view_layer.objects.active = obj
     obj.select_set(True)
     object_name = obj.name
