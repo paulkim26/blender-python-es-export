@@ -8,13 +8,24 @@ Simple repeatable Blender Python script to mass export objects for use in Escape
 
 This is helpful if you find it annoying to:
 - Individually export individual objects one by one from Blender.
-- Double check that the proper Blender `.gltf` export options are correctly configured for Escape Simulator.
+- Double check that the proper Blender `.gltf` export options are correct.
 - Copy and paste them to your `UGC` directory in your file browser.
+
+## Features
 
 Exports models for Escape Simulator with these settings:
 - `.gltf` format
 - Applies all mesh modifiers
 - Exports objects to their own directories
+- Corrects the exported object's origin to `(0, 0, 0)`
+
+Before (notice the origin is offset)
+
+![Screenshot 2025-02-01 081801](https://github.com/user-attachments/assets/8ed95572-f3e2-4d9f-bea8-8a896132b22e)
+
+After (origin corrected to `(0, 0, 0)`)
+
+![Screenshot 2025-02-01 082013](https://github.com/user-attachments/assets/d4b6d719-530a-4713-a224-3c96717373d4)
 
 ## Requisites
 
@@ -87,5 +98,3 @@ C:/Users/Dude/AppData/LocalLow/Pine Studio/Escape Simulator/UGC
 ```
 
 ![image](https://github.com/user-attachments/assets/a70d43f6-2a01-4293-8806-7e1100e73827)
-
-
