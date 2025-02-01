@@ -23,7 +23,7 @@ Before (notice the origin is offset)
 
 ![Screenshot 2025-02-01 081801](https://github.com/user-attachments/assets/8ed95572-f3e2-4d9f-bea8-8a896132b22e)
 
-After (origin corrected to `(0, 0, 0)`
+After (origin corrected to `(0, 0, 0)`)
 
 ![Screenshot 2025-02-01 082013](https://github.com/user-attachments/assets/d4b6d719-530a-4713-a224-3c96717373d4)
 
@@ -94,5 +94,3 @@ C:/Users/Dude/AppData/LocalLow/Pine Studio/Escape Simulator/UGC
 ```
 
 ![image](https://github.com/user-attachments/assets/a70d43f6-2a01-4293-8806-7e1100e73827)
-
-
