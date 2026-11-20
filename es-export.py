@@ -3,7 +3,7 @@ import os
 
 # Parameters
 collection_name = "export"
-export_path = "C:/Users/<user>/AppData/LocalLow/Pine Studio/Escape Simulator/UGC/Room_x/_CustomModels" # CHANGE THIS!
+export_path = "C:/Users/<user>/AppData/LocalLow/Pine Studio/Escape Simulator 2/UGC/Room_x/_CustomModels" # CHANGE THIS!
 
 def export_gltf(obj, export_path):
     if obj.hide_get(): # Skip hidden objects
@@ -51,9 +51,27 @@ def export_collection_to_gltf(collection_name, export_path):
         os.makedirs(export_path)
         
     for obj in collection.objects:
-        if obj.type == 'MESH':  # Export only mesh objects
+        if obj.type in {'MESH', 'CURVE'}:
             print(f"Exporting: {obj.name}")
-            export_gltf(obj, export_path)
+
+            if obj.type == 'CURVE':
+                # Duplicate so the original curve remains untouched
+                duplicate = obj.copy()
+                duplicate.data = obj.data.copy()
+                collection.objects.link(duplicate)
+
+                # Convert duplicate to mesh
+                bpy.ops.object.select_all(action='DESELECT')
+                bpy.context.view_layer.objects.active = duplicate
+                duplicate.select_set(True)
+                bpy.ops.object.convert(target='MESH')
+
+                export_gltf(duplicate, export_path)
+
+                # Remove temporary object
+                bpy.data.objects.remove(duplicate, do_unlink=True)
+            else:
+                export_gltf(obj, export_path)
 
 export_collection_to_gltf(collection_name, export_path)
 print("Done")
