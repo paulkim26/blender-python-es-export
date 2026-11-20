@@ -31,7 +31,7 @@ After (origin corrected to `(0, 0, 0)`)
 
 This has been tested for:
 - Windows 11
-- Escape Simulator `v35389r` (Steam version as of February 1, 2025)
+- Escape Simulator 1 + 2
 - Blender `4.3.2`
 
 This should run fine for Linux/Mac and future Blender versions, but YMMV.
@@ -55,8 +55,7 @@ Tip: You can find your room's directory in room editor by clicking "Open UGC Fol
 
 ## Usage
 
-1. In Blender, create a collection called `export` and put the mesh objects you want to export in there.
-    - Only visible objects will be exported.
+1. In Blender, create your models. Mark the ones you want to be exported as renderable. Otherwise they'll be ignored.
 2. Run the script in Blender (click the "Run Script" button or press `Alt-P`).
 3. You should now see the models.
     - If in Escape Simulator your Room Editor window was already open, you will need to exit back to the main menu and open your room again to see the updated models.
@@ -67,17 +66,13 @@ Tip: You can find your room's directory in room editor by clicking "Open UGC Fol
 
 ## Example
 
-Let's say your Blender scene collection has the following objects in a collection named `export`:
+Let's say your Blender scene collection has the following objects:
 
 ```
-/export
-    mdl_box
-    mdl_can
-    mdl_shoe
+mdl_box
+mdl_can
+mdl_shoe
 ```
-
-![image](https://github.com/user-attachments/assets/3988b2a5-1b77-418b-bc45-319933c33d32)
-
 
 These objects can have Blender Modifiers on them, those will be applied.
 
